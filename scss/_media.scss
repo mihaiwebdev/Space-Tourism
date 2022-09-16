@@ -1,0 +1,709 @@
+@media(max-width:1250px) {
+    .navbar {
+        margin-top: 0px;
+
+        .line {
+            display: none;
+        }
+
+        .nav-ul {
+            width: 600px;
+            height: 86px;
+
+            .nav-li {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #hero {
+
+        .header-content {
+            flex-direction: column;
+
+            .description {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 100px;
+            }
+
+            .planet {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 200px;
+                margin-right: 0px;
+            }
+        }
+
+
+        &-destination {
+            overflow: hidden;
+
+            .header-content {
+                flex-direction: column;
+
+                .planet {
+                    margin-top: 20px;
+                    width: 100%;
+                    margin-right: 0;
+
+                    .planet-img {
+                        width: 300px;
+                        height: 300px;
+                        margin-left: 0px;
+                        margin-top: 30px;
+                        margin-bottom: 20px;
+                    }
+
+                    .step {
+                        width: 100%;
+                        margin-left: 50px;
+                        margin-top: 20px;
+
+                        h2 {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+
+                .description {
+                    width: 100%;
+                    height: 100%;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-top: 0px;
+
+                    .info {
+                        height: 100%;
+                    }
+
+                    .planet-nav {
+                        justify-content: center;
+
+                        li {
+                            font-size: 18px;
+                            margin: 0px 20px;
+                        }
+                    }
+
+                    .planet-name {
+                        font-size: 80px;
+                        line-height: 120px;
+                        display: flex;
+                        justify-content: center;
+                        font-family: 'Bellefair', serif;
+                    }
+
+                    .lead {
+                        text-align: center;
+                        font-size: 16px;
+                    }
+
+                    .planet-travel {
+                        margin-top: 20px;
+                        justify-content: center;
+
+                        .lead {
+                            font-size: 14px;
+                        }
+
+                        h2 {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-crew {
+
+            &.show {
+                background: url('../assets/crew/background-crew-tablet.jpg')no-repeat center center/cover;
+            }
+
+            .header-content {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+
+                .description {
+                    margin-top: 50px;
+                    text-align: center;
+                    margin-left: 0;
+                    width: 100%;
+
+                    .info {
+                        width: 100%;
+                        height: 232px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+
+                        .step {
+                            position: absolute;
+                            left: 20px;
+                            top: -10px;
+                            margin-top: 0px;
+
+                            h2 {
+                                margin-bottom: 20px;
+                            }
+                        }
+
+                        .crew-title {
+                            margin-top: 70px;
+                            font-size: 20px;
+                        }
+
+                        .crew-name {
+                            font-size: 40px;
+                        }
+
+                        .lead {
+                            font-size: 16px;
+                            width: 458px;
+                            line-height: 28px;
+                        }
+                    }
+
+                    .change-char {
+                        margin-top: 0px;
+                        margin-right: 0px;
+
+                        .dot {
+                            margin-top: 60px;
+                        }
+                    }
+                }
+
+                .char {
+                    justify-content: center;
+
+                    width: 100%;
+
+                    .char-photo {
+                        height: 572px;
+                        width: 456px;
+                    }
+                }
+            }
+        }
+
+        &-tech {
+            &.show {
+                background: url('../assets/technology/background-technology-tablet.jpg')no-repeat center center/cover;
+            }
+
+            .header-content {
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+                align-items: center;
+                position: relative;
+
+                .description {
+                    flex-direction: column;
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    height: auto;
+
+                    .step {
+                        position: absolute;
+                        top: 30px;
+                        left: 20px;
+                    }
+
+                    .info {
+                        margin-top: 0px;
+                        margin-left: 0px;
+                        height: auto;
+
+                        .launch-steps {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            margin-top: 0;
+
+                            .numbers {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0;
+
+                                .num {
+                                    width: 58px;
+                                    height: 58px;
+                                    margin: 0 5px;
+                                }
+                            }
+
+                            .launch-info {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 30px;
+
+                                h2 {
+                                    font-size: 40px;
+                                }
+
+                                .lead {
+                                    line-height: 27px;
+                                    font-size: 16px;
+                                    width: 470px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rocket {
+                    margin-top: 120px;
+                    position: relative;
+                    height: 310px;
+                    margin-bottom: 50px;
+
+
+                    .rocket-image {
+                        background: url('../assets/technology/roket-landscape.png')no-repeat center 80% /cover;
+                        height: 310px;
+                        width: 100%;
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media(max-width: 745px) {
+
+    .navbar {
+        height: 80px;
+
+        .logo {
+            left: 20px;
+            z-index: 2;
+
+            img {
+
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .nav-ul {
+            display: none;
+        }
+
+        .mobile-nav {
+            width: 35px;
+            height: 40px;
+            display: flex;
+            margin-top: 15px;
+            margin-right: 20px;
+
+            .hamburger {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 35px;
+                height: 40px;
+                background-color: transparent;
+                position: relative;
+                cursor: pointer;
+
+
+                &>div {
+                    height: 2px;
+                    width: 100%;
+                    background: #fff;
+                    z-index: 2;
+
+
+                    &::after,
+                    &::before {
+                        content: '';
+                        height: 2px;
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        transform: translate(-50%, -9px);
+                        left: 50%;
+                        z-index: 2;
+                        background: #fff;
+                        transition: transform 0.5s ease;
+
+                    }
+
+                    &::before {
+                        transform: translate(-50%, 9px);
+                    }
+                }
+
+                &.close {
+
+                    &>div {
+
+
+                        &::after {
+                            width: 60%;
+                            transform: translate(-4px, -5px) rotate(30deg);
+                        }
+
+                        &::before {
+                            width: 60%;
+                            transform: translate(-4px, 5px) rotate(-30deg);
+                        }
+                    }
+                }
+            }
+
+            .mobile-ul {
+
+                position: absolute;
+                top: 0px;
+                right: 0;
+                width: 254px;
+                height: 100vh;
+                padding: 80px 0 40px 0;
+                transform: translateX(280px);
+                background: rgba(255, 255, 255, 0.04);
+                backdrop-filter: blur(40.7742px);
+                z-index: 1;
+                transition: transform 0.5s ease-out;
+                text-align: start;
+
+
+                &.show {
+                    transform: translateX(0);
+                }
+
+                .nav-li {
+                    margin: 50px 0;
+                    font-size: 18px;
+                    margin-left: 30px;
+
+
+                    a {
+                        transition: opacity 0.2s ease;
+                        font-weight: 200;
+                        letter-spacing: 1.5px;
+
+                        span {
+                            font-weight: bold;
+                        }
+
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .line {
+        display: none;
+    }
+
+    #hero {
+        overflow: hidden;
+
+        &.show {
+            background: url('../assets/home/home-bg-cut - Copy.jpg')no-repeat center center /cover;
+
+        }
+
+        .header-content {
+
+            .description {
+                z-index: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0 20px;
+                margin-top: 30px;
+
+
+                .info {
+                    height: auto;
+
+                    p {
+                        font-size: 20px;
+                    }
+
+                    h1 {
+                        font-size: 100px;
+                    }
+
+                    .lead {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .planet {
+                margin-bottom: 100px;
+                z-index: 0;
+
+                .background {
+                    width: 150px;
+                    height: 150px;
+
+                    .explore {
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+            }
+        }
+
+        &-destination {
+            overflow: hidden;
+
+            .header-content {
+
+                .planet {
+                    justify-content: flex-start;
+                    height: 50%;
+                    z-index: 0;
+
+                    .step {
+                        margin-left: 0;
+                        text-align: center;
+                        font-size: 14px;
+                    }
+
+                    .planet-img {
+                        width: 170px;
+                        height: 170px;
+                    }
+                }
+
+                .description {
+                    z-index: 0;
+                    margin-left: 0;
+
+                    .info {
+                        .planet-nav {
+                            li {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .planet-name {
+                            font-size: 60px;
+                            line-height: 70px;
+                            margin-top: 15px;
+                        }
+
+                        .lead {
+                            padding: 0 20px;
+                        }
+
+                        .planet-travel {
+                            margin-top: 0px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            border: none;
+
+                            .distance {
+                                margin: 0;
+                            }
+
+                            .time {
+                                text-align: center;
+                                margin-top: 15px;
+                            }
+
+                            h2 {
+                                font-size: 1.2rem;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &-crew {
+            overflow: hidden;
+
+            .header-content {
+                flex-direction: column-reverse;
+                margin-top: 40px;
+
+
+                .description {
+                    margin-top: 0px;
+                    position: relative;
+                    z-index: 0;
+
+                    .info {
+                        margin-top: 45px;
+
+
+                        .step {
+                            font-size: 10px;
+                            text-align: center;
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+                            top: -450px;
+
+                        }
+
+                        .crew-title {
+                            font-size: 18px;
+                            margin-top: 10px;
+                        }
+
+                        .crew-name {
+                            font-size: 25px;
+                        }
+
+                        .lead {
+                            font-size: 16px;
+                            width: 100%;
+                            padding: 0 15px;
+                        }
+                    }
+
+                    .change-char {
+                        position: absolute;
+                        top: 0;
+
+                        .dot {
+                            margin-top: 25px;
+                            width: 11px;
+                            height: 11px;
+                        }
+                    }
+                }
+
+                .char {
+                    margin-top: 30px;
+                    justify-content: center;
+                    align-items: flex-start;
+                    border-bottom: 1px solid #444;
+                    height: auto;
+                    width: 90%;
+
+
+                    .char-photo {
+                        width: 253px;
+                        height: 327px;
+                        margin-right: 0px;
+                        background: url('../assets/crew/douglas.png')no-repeat center center /cover;
+
+                        &.ansari.show {
+                            width: 320px;
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &-tech {
+            overflow: hidden;
+
+            .header-content {
+
+                .description {
+                    z-index: 0;
+
+
+                    .step {
+                        font-size: 12px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+
+                    .info {
+                        .launch-steps {
+                            .numbers {
+                                .num {
+                                    width: 40px;
+                                    height: 40px;
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .launch-info {
+                                .name {
+                                    font-size: 28px;
+                                }
+
+                                .lead {
+                                    width: 90%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rocket {
+                    height: 200px;
+
+                    .rocket-image {
+                        background: url(../assets/technology/roket-res.png) no-repeat center 70% /cover;
+                        width: 100%;
+                        height: inherit;
+                        overflow: visible;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-height:800px) {
+
+    #hero {
+
+        &-destination {
+            .header-content {
+                .description {
+                    .info {
+
+                        .planet-travel {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-crew {
+            height: 100%;
+        }
+
+        &-tech {
+            height: 100%;
+        }
+
+
+    }
+
+
+}

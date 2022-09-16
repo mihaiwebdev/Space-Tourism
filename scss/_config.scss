@@ -1,0 +1,17 @@
+// Variables
+$text-color: #D0D6F9;
+$sec-text-color: #0b0d17;
+
+
+
+
+// Set Text Color
+@function set-text-color($color) {
+    @if(lightness($color) > 50) {
+        @return #000;
+    }
+
+    @else {
+        @return #fff;
+    }
+}
