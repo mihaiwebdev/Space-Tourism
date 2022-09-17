@@ -4,7 +4,6 @@ const planet = document.querySelector('.planet');
 const descriptionInfo = document.querySelector('.info');
 
 
-
 window.addEventListener('load', () => {
     navbar.classList.add('show');
     planet.classList.add('show');

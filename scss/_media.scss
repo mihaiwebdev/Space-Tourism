@@ -22,6 +22,7 @@
 
         .header-content {
             flex-direction: column;
+            height: auto;
 
             .description {
                 width: 100%;
@@ -34,6 +35,11 @@
                 justify-content: center;
                 margin-bottom: 200px;
                 margin-right: 0px;
+                position: relative;
+
+                .background {
+                    top: 0;
+                }
             }
         }
 
@@ -381,6 +387,7 @@
                 transform: translateX(280px);
                 background: rgba(255, 255, 255, 0.04);
                 backdrop-filter: blur(40.7742px);
+                -webkit-backdrop-filter: blur(40.7742px);
                 z-index: 1;
                 transition: transform 0.5s ease-out;
                 text-align: start;
@@ -395,11 +402,11 @@
                     font-size: 18px;
                     margin-left: 30px;
 
-
                     a {
                         transition: opacity 0.2s ease;
                         font-weight: 200;
                         letter-spacing: 1.5px;
+
 
                         span {
                             font-weight: bold;
@@ -463,6 +470,7 @@
                 .background {
                     width: 150px;
                     height: 150px;
+                    top: 50px;
 
                     .explore {
                         width: 150px;
@@ -608,14 +616,17 @@
 
 
                     .char-photo {
-                        width: 253px;
+                        width: 243px;
                         height: 327px;
                         margin-right: 0px;
                         background: url('../assets/crew/douglas.png')no-repeat center center /cover;
 
                         &.ansari.show {
                             width: 320px;
+                        }
 
+                        &.victor.show {
+                            width: 263px;
                         }
                     }
                 }

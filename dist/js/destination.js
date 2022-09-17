@@ -22,6 +22,134 @@ async function getData() {
 }
 
 
+// Finger Swipe
+let touchstartX = 0
+let touchendX = 0
+let i = 0;
+
+async function checkDirection() {
+
+    const data = await getData();
+
+
+    if (touchendX < touchstartX) {
+        i++;
+        if (i >= data.destinations.length) {
+            i = 0
+        }
+
+        moon.classList.remove('active')
+        mars.classList.remove('active');
+        europa.classList.remove('active');
+        titan.classList.remove('active');
+
+        planetNav.children[i].classList.add('active');
+
+        planetName.className = 'planet-name hide';
+        setTimeout(() => {
+            planetName.className = 'planet-name show';
+            planetName.innerHTML = `${data.destinations[i].name}`
+        }, 500);
+
+        planetInfo.className = 'lead hide'
+        setTimeout(() => {
+            planetInfo.className = 'lead show'
+            planetInfo.innerHTML = `${data.destinations[i].description}`
+        }, 500);
+
+        toPlanetKm.className = 'km hide'
+        setTimeout(() => {
+            toPlanetKm.className = 'km show';
+            toPlanetKm.innerHTML = `${data.destinations[i].distance}`
+
+        }, 500);
+
+        planetTravelTime.className = 'days hide'
+        setTimeout(() => {
+            planetTravelTime.className = 'days show'
+            planetTravelTime.innerHTML = `${data.destinations[i].travel}`
+        }, 500);
+
+
+
+        planetImg.classList.remove('rotate');
+        setTimeout(() => {
+            planetImg.classList.add('rotate');
+            planetImg.style.background = `url(${data.destinations[i].images.webp})no-repeat center center /cover`
+        }, 500);
+
+
+
+    }
+
+    if (touchendX > touchstartX) {
+
+        i--;
+        if (i < 0) {
+            i = data.destinations.length - 1;
+        }
+
+
+
+        moon.classList.remove('active')
+        mars.classList.remove('active');
+        europa.classList.remove('active');
+        titan.classList.remove('active');
+
+        planetNav.children[i].classList.add('active');
+
+        planetName.className = 'planet-name hide';
+        setTimeout(() => {
+            planetName.className = 'planet-name show';
+            planetName.innerHTML = `${data.destinations[i].name}`
+        }, 300);
+
+        planetInfo.className = 'lead hide'
+        setTimeout(() => {
+            planetInfo.className = 'lead show'
+            planetInfo.innerHTML = `${data.destinations[i].description}`
+        }, 300);
+
+        toPlanetKm.className = 'km hide'
+        setTimeout(() => {
+            toPlanetKm.className = 'km show';
+            toPlanetKm.innerHTML = `${data.destinations[i].distance}`
+
+        }, 300);
+
+        planetTravelTime.className = 'days hide'
+        setTimeout(() => {
+            planetTravelTime.className = 'days show'
+            planetTravelTime.innerHTML = `${data.destinations[i].travel}`
+        }, 300);
+
+
+
+        planetImg.classList.remove('rotate');
+        setTimeout(() => {
+            planetImg.classList.add('rotate');
+            planetImg.style.background = `url(${data.destinations[i].images.webp})no-repeat center center /cover`
+        }, 300);
+
+
+    }
+
+}
+
+
+planet.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX
+})
+
+planet.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX
+    checkDirection();
+
+
+})
+
+
+
 
 planetNav.addEventListener('click', async (e) => {
 
@@ -37,26 +165,26 @@ planetNav.addEventListener('click', async (e) => {
         setTimeout(() => {
             planetName.className = 'planet-name show';
             planetName.innerHTML = `${data.destinations[0].name}`
-        }, 500);
+        }, 300);
 
         planetInfo.className = 'lead hide'
         setTimeout(() => {
             planetInfo.className = 'lead show'
             planetInfo.innerHTML = `${data.destinations[0].description}`
-        }, 500);
+        }, 300);
 
         toPlanetKm.className = 'km hide'
         setTimeout(() => {
             toPlanetKm.className = 'km show';
             toPlanetKm.innerHTML = `${data.destinations[0].distance}`
 
-        }, 500);
+        }, 300);
 
         planetTravelTime.className = 'days hide'
         setTimeout(() => {
             planetTravelTime.className = 'days show'
             planetTravelTime.innerHTML = `${data.destinations[0].travel}`
-        }, 500);
+        }, 300);
 
 
 
@@ -64,7 +192,7 @@ planetNav.addEventListener('click', async (e) => {
         setTimeout(() => {
             planetImg.classList.add('rotate');
             planetImg.style.background = `url(${data.destinations[0].images.webp})no-repeat center center /cover`
-        }, 500);
+        }, 300);
 
     }
 
@@ -194,11 +322,9 @@ planetNav.addEventListener('click', async (e) => {
 });
 
 
-
 window.addEventListener('load', () => {
     destination.classList.add('show');
     planetImg.classList.add('rotate');
-
     planet.classList.add('show');
     descriptionInfo.classList.add('show');
 })

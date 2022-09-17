@@ -19,8 +19,6 @@ async function getData() {
 }
 
 
-
-
 numbers.addEventListener('click', async (e) => {
 
     const data = await getData();
