@@ -18,6 +18,9 @@ ul {
     list-style: none;
 }
 
+body {
+    position: relative;
+}
 
 // Hero Header 
 #hero {
@@ -59,7 +62,9 @@ ul {
                 position: absolute;
                 width: 224px;
                 height: 224px;
-                background: #fff;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(40.7742px);
+                -webkit-backdrop-filter: blur(40.7742px);
                 border-radius: 50%;
                 text-align: center;
                 display: flex;
@@ -69,7 +74,7 @@ ul {
                 line-height: 37px;
                 letter-spacing: 2px;
                 font-weight: 300;
-                color: $sec-text-color;
+                color: #fff;
                 z-index: 2;
 
             }
@@ -79,26 +84,26 @@ ul {
     }
 
     &-destination {
-
+        overflow: hidden;
         height: 100vh;
         width: 100vw;
-        overflow: hidden;
         transition: background 1.5s ease;
+        background: url('../assets/destination/destination-bg.jpg')no-repeat center center/cover;
+
 
         &.show {
-            background: url('../assets/destination/destination-bg.jpg')no-repeat center center/cover;
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+
+            }
         }
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.7);
-
-        }
 
         .planet {
             display: flex;
@@ -235,15 +240,23 @@ ul {
     }
 
     &-crew {
+        overflow: hidden;
         height: 100vh;
         width: 100vw;
-        overflow: hidden;
         transition: background 1.5s ease;
         background-color: rgba(0, 0, 0, 0.9);
 
         &.show {
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url('../assets/crew/background-crew-desktop.jpg')no-repeat center center/cover;
 
-            background: url('../assets/crew/background-crew-desktop.jpg')no-repeat center center/cover;
+            }
         }
 
         .char {
@@ -252,7 +265,7 @@ ul {
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 110px;
 
             .char-photo {
                 background: url('../assets/crew/douglas.png')no-repeat 0% 0% /cover;
@@ -277,6 +290,7 @@ ul {
                 &.ansari {
                     height: 657px;
                     width: 615.07px;
+                    margin-top: 50px;
                 }
 
                 &.show {
@@ -356,7 +370,7 @@ ul {
                     height: 13px;
                     border-radius: 50%;
                     opacity: 17.44%;
-                    margin-top: 100px;
+                    margin-top: 50px;
                     margin-right: 15px;
                     cursor: pointer;
 
@@ -375,7 +389,6 @@ ul {
     }
 
     &-tech {
-
         overflow: hidden;
         height: 100vh;
         width: 100vw;
@@ -384,7 +397,15 @@ ul {
 
 
         &.show {
-            background: url('../assets/technology/background-technology-desktop.jpg')no-repeat center center/cover;
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url('../assets/technology/background-technology-desktop.jpg')no-repeat center center/cover;
+            }
         }
 
 
@@ -497,7 +518,7 @@ ul {
                 background: url('../assets/technology/roket-res.png')no-repeat center center/cover;
                 position: absolute;
                 right: 0;
-                top: 120px;
+                top: 100px;
                 border-radius: 20px 0 0 20px;
                 transition: transform 0.4s ease, opacity 0.4s ease;
 

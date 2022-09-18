@@ -29,7 +29,7 @@ async function checkDirection() {
     const data = await getData();
 
 
-    if (touchendX < touchstartX) {
+    if (touchendX + 30 < touchstartX) {
         i++;
         if (i >= data.crew.length) {
             i = 0
@@ -68,7 +68,7 @@ async function checkDirection() {
 
     }
 
-    if (touchendX > touchstartX) {
+    if (touchendX - 30 > touchstartX) {
 
         i--;
         if (i < 0) {

@@ -45,7 +45,6 @@
 
 
         &-destination {
-            overflow: hidden;
 
             .header-content {
                 flex-direction: column;
@@ -186,13 +185,17 @@
                 }
 
                 .char {
+                    margin-top: 30px;
                     justify-content: center;
-
                     width: 100%;
 
                     .char-photo {
                         height: 572px;
                         width: 456px;
+
+                        &.ansari {
+                            margin-top: 0px;
+                        }
                     }
                 }
             }
@@ -481,7 +484,7 @@
         }
 
         &-destination {
-            overflow: hidden;
+            overflow-x: hidden;
 
             .header-content {
 
@@ -552,7 +555,7 @@
         }
 
         &-crew {
-            overflow: hidden;
+            overflow-x: hidden;
 
             .header-content {
                 flex-direction: column-reverse;
@@ -635,7 +638,7 @@
         }
 
         &-tech {
-            overflow: hidden;
+            overflow-x: hidden;
 
             .header-content {
 
@@ -693,16 +696,7 @@
     #hero {
 
         &-destination {
-            .header-content {
-                .description {
-                    .info {
-
-                        .planet-travel {
-                            display: none;
-                        }
-                    }
-                }
-            }
+            height: 100%;
         }
 
         &-crew {
@@ -713,8 +707,6 @@
             height: 100%;
         }
 
-
     }
-
 
 }
