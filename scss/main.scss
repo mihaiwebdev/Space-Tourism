@@ -20,7 +20,7 @@ ul {
 
 body {
     position: relative;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(9, 4, 32);
 }
 
 // Hero Header 
@@ -394,21 +394,15 @@ body {
         height: 100vh;
         width: 100vw;
         transition: background 1.5s ease;
-        background-color: rgba(0, 0, 0, 0.9);
-
 
         &.show {
-            &::before {
-                content: '';
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: url('../assets/technology/background-technology-desktop.jpg')no-repeat center center/cover;
-            }
+            background: url('../assets/technology/background-technology-desktop.jpg')no-repeat center center/cover;
+
         }
 
+        .header-content {
+            height: auto;
+        }
 
         .description {
             height: 100%;
@@ -428,8 +422,6 @@ body {
             height: 100%;
             margin-top: 130px;
             margin-left: 70px;
-
-
 
             .launch-steps {
                 display: flex;
@@ -519,7 +511,7 @@ body {
                 background: url('../assets/technology/roket-res.png')no-repeat center center/cover;
                 position: absolute;
                 right: 0;
-                top: 100px;
+                top: 300px;
                 border-radius: 20px 0 0 20px;
                 transition: transform 0.4s ease, opacity 0.4s ease;
 
