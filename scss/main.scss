@@ -9,6 +9,10 @@
     font-family: 'Barlow Condensed', sans-serif;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: #fff;
@@ -89,10 +93,11 @@ body {
         height: 100vh;
         width: 100vw;
         transition: background 1.5s ease;
-        background: url('../assets/destination/destination-bg.jpg')no-repeat center center/cover;
 
 
         &.show {
+            background: url('../assets/destination/destination-bg.jpg')no-repeat center center/cover;
+
             &::before {
                 content: '';
                 width: 100%;
@@ -105,6 +110,9 @@ body {
             }
         }
 
+        .header-content {
+            position: relative;
+        }
 
         .planet {
             display: flex;
@@ -139,7 +147,6 @@ body {
 
         .description {
             margin-bottom: 150px;
-
         }
 
         .planet-nav {
@@ -248,16 +255,8 @@ body {
         background-color: rgba(0, 0, 0, 0.9);
 
         &.show {
-            &::before {
-                content: '';
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: url('../assets/crew/background-crew-desktop.jpg')no-repeat center center/cover;
+            background: url('../assets/crew/background-crew-desktop.jpg')no-repeat center center/cover;
 
-            }
         }
 
         .char {

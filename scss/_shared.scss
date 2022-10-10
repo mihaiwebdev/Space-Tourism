@@ -10,6 +10,17 @@ a {
     height: 100%;
 }
 
+.spinner {
+    position: absolute;
+    background: url('../assets/spinner.gif')no-repeat center center /cover;
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
 .active {
     border-bottom: 2px solid #fff;
 }

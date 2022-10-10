@@ -1,4 +1,5 @@
 const navbar = document.getElementById('navbar');
+const header = document.querySelector('.header-content')
 const techHero = document.getElementById('hero-tech');
 const descriptionInfo = document.querySelector('.info');
 const launchInfo = document.querySelector('.launch-info');
@@ -9,18 +10,24 @@ const lead = document.querySelector('.lead');
 const rocket = document.querySelector('.rocket-image');
 const rocketDiv = document.querySelector('.rocket');
 
+const spinner = document.createElement('div')
+spinner.className = 'spinner'
+
+let loading = true;
 
 async function getData() {
 
     const res = await fetch(`./js/data.json`);
     const data = await res.json();
+    loading = false
     return data;
 
 }
 
 
 numbers.addEventListener('click', async (e) => {
-
+    loading = true
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
     const data = await getData();
 
 
@@ -125,6 +132,7 @@ numbers.addEventListener('click', async (e) => {
         }, 300)
 
     }
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
 })
 
 window.addEventListener('load', () => {

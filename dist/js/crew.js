@@ -1,4 +1,5 @@
 const navbar = document.getElementById('navbar');
+const header = document.querySelector('.header-content')
 const crewHero = document.getElementById('hero-crew');
 const crewTitle = document.querySelector('.crew-title');
 const charName = document.querySelector('.crew-name');
@@ -9,11 +10,17 @@ const changeChar = document.querySelector('.change-char');
 const dot = document.querySelectorAll('.dot');
 const info = document.querySelector('.info');
 
+const spinner = document.createElement('div')
+spinner.className = 'spinner'
+
+let loading = true;
+
 // Fetch Data
 async function getData() {
 
     const res = await fetch('./js/data.json');
     const data = await res.json();
+    loading = false
     return data;
 
 }
@@ -25,7 +32,8 @@ let touchendX = 0
 let i = 0;
 
 async function checkDirection() {
-
+    loading = true
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
     const data = await getData();
 
 
@@ -108,7 +116,7 @@ async function checkDirection() {
         }, 200)
 
     }
-
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
 }
 
 
@@ -126,7 +134,8 @@ crewDiv.addEventListener('touchend', e => {
 
 // Change crew member on click
 changeChar.addEventListener('click', async (e) => {
-
+    loading = true
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
     const data = await getData();
 
 
@@ -147,10 +156,10 @@ changeChar.addEventListener('click', async (e) => {
                 crewLead.innerHTML = `${data.crew[0].bio}`
                 charImg.style.background = `url(${data.crew[0].images.png})no-repeat 0% 0% /cover`
                 charImg.className = 'char-photo doug show ';
+
             }, 200)
 
         }, 300)
-
     }
 
     if (e.target.classList.contains('dot-two')) {
@@ -171,6 +180,8 @@ changeChar.addEventListener('click', async (e) => {
                 crewLead.innerHTML = `${data.crew[1].bio}`
                 charImg.style.background = `url(${data.crew[1].images.png})no-repeat 0% 0% /cover`
                 charImg.className = 'char-photo mark show ';
+
+
             }, 200)
 
         }, 300)
@@ -216,12 +227,13 @@ changeChar.addEventListener('click', async (e) => {
                 crewLead.innerHTML = `${data.crew[3].bio}`
                 charImg.style.background = `url(${data.crew[3].images.png})no-repeat center center/cover`
                 charImg.className = 'char-photo ansari show ';
+
             }, 200);
 
+
         }, 300)
-
     }
-
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
 });
 
 window.addEventListener('load', () => {

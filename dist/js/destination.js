@@ -1,4 +1,5 @@
 const navbar = document.getElementById('navbar');
+const header = document.querySelector('.header-content')
 const planet = document.querySelector('.planet');
 const descriptionInfo = document.querySelector('.info');
 const destination = document.getElementById('hero-destination');
@@ -13,14 +14,19 @@ const mars = document.querySelector('.mars');
 const europa = document.querySelector('.europa');
 const titan = document.querySelector('.titan');
 
-async function getData() {
+const spinner = document.createElement('div')
+spinner.className = 'spinner'
 
+let loading = true;
+
+
+async function getData() {
     const res = await fetch('./js/data.json');
     const data = await res.json();
+    loading = false
     return data;
 
 }
-
 
 // Finger Swipe
 let touchstartX = 0
@@ -28,7 +34,8 @@ let touchendX = 0
 let i = 0;
 
 async function checkDirection() {
-
+    loading = true
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
     const data = await getData();
 
     if (touchendX + 30 < touchstartX) {
@@ -72,9 +79,9 @@ async function checkDirection() {
 
 
         planetImg.classList.remove('rotate');
+        planetImg.style.background = `url(${data.destinations[i].images.webp})no-repeat center center /cover`
         setTimeout(() => {
             planetImg.classList.add('rotate');
-            planetImg.style.background = `url(${data.destinations[i].images.webp})no-repeat center center /cover`
         }, 500);
 
 
@@ -122,14 +129,14 @@ async function checkDirection() {
 
 
         planetImg.classList.remove('rotate');
+        planetImg.style.background = `url(${data.destinations[i].images.webp})no-repeat center center /cover`
         setTimeout(() => {
             planetImg.classList.add('rotate');
-            planetImg.style.background = `url(${data.destinations[i].images.webp})no-repeat center center /cover`
         }, 300);
 
 
     }
-
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
 }
 
 
@@ -146,52 +153,49 @@ planet.addEventListener('touchend', e => {
 
 })
 
-
-
-
-planetNav.addEventListener('click', async (e) => {
-
+const fetchData = async (e) => {
+    loading = true
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
     const data = await getData();
 
     if (e.target.classList.contains('moon')) {
+
         e.target.classList.add('active')
         mars.classList.remove('active');
         europa.classList.remove('active');
         titan.classList.remove('active');
 
+
+        planetImg.style.background = `url(${data.destinations[0].images.webp})no-repeat center center /cover`
+        planetImg.classList.remove('rotate');
+        setTimeout(() => {
+            planetImg.classList.add('rotate');
+        }, 500);
+
         planetName.className = 'planet-name hide';
         setTimeout(() => {
             planetName.className = 'planet-name show';
             planetName.innerHTML = `${data.destinations[0].name}`
-        }, 300);
+        }, 500);
 
         planetInfo.className = 'lead hide'
         setTimeout(() => {
             planetInfo.className = 'lead show'
             planetInfo.innerHTML = `${data.destinations[0].description}`
-        }, 300);
+        }, 500);
 
         toPlanetKm.className = 'km hide'
         setTimeout(() => {
             toPlanetKm.className = 'km show';
             toPlanetKm.innerHTML = `${data.destinations[0].distance}`
 
-        }, 300);
+        }, 500);
 
         planetTravelTime.className = 'days hide'
         setTimeout(() => {
             planetTravelTime.className = 'days show'
             planetTravelTime.innerHTML = `${data.destinations[0].travel}`
-        }, 300);
-
-
-
-        planetImg.classList.remove('rotate');
-        setTimeout(() => {
-            planetImg.classList.add('rotate');
-            planetImg.style.background = `url(${data.destinations[0].images.webp})no-repeat center center /cover`
-        }, 300);
-
+        }, 500);
     }
 
 
@@ -200,6 +204,13 @@ planetNav.addEventListener('click', async (e) => {
         moon.classList.remove('active');
         europa.classList.remove('active');
         titan.classList.remove('active');
+
+
+        planetImg.classList.remove('rotate');
+        planetImg.style.background = `url(${data.destinations[1].images.webp})no-repeat center center /cover`
+        setTimeout(() => {
+            planetImg.classList.add('rotate');
+        }, 500);
 
         planetName.className = 'planet-name hide';
         setTimeout(() => {
@@ -228,12 +239,6 @@ planetNav.addEventListener('click', async (e) => {
             planetTravelTime.innerHTML = `${data.destinations[1].travel}`
         }, 500);
 
-
-        planetImg.classList.remove('rotate');
-        setTimeout(() => {
-            planetImg.classList.add('rotate');
-            planetImg.style.background = `url(${data.destinations[1].images.webp})no-repeat center center /cover`
-        }, 500);
     }
 
     if (e.target.classList.contains('europa')) {
@@ -241,6 +246,13 @@ planetNav.addEventListener('click', async (e) => {
         moon.classList.remove('active');
         mars.classList.remove('active');
         titan.classList.remove('active');
+
+
+        planetImg.classList.remove('rotate');
+        planetImg.style.background = `url(${data.destinations[2].images.webp})no-repeat center center /cover`
+        setTimeout(() => {
+            planetImg.classList.add('rotate');
+        }, 500);
 
         planetName.className = 'planet-name hide';
         setTimeout(() => {
@@ -268,13 +280,6 @@ planetNav.addEventListener('click', async (e) => {
             planetTravelTime.innerHTML = `${data.destinations[2].travel}`
         }, 500);
 
-
-        planetImg.classList.remove('rotate');
-        setTimeout(() => {
-            planetImg.classList.add('rotate');
-            planetImg.style.background = `url(${data.destinations[2].images.webp})no-repeat center center /cover`
-        }, 500);
-
     }
 
     if (e.target.classList.contains('titan')) {
@@ -282,6 +287,13 @@ planetNav.addEventListener('click', async (e) => {
         moon.classList.remove('active');
         mars.classList.remove('active');
         europa.classList.remove('active');
+
+
+        planetImg.classList.remove('rotate');
+        planetImg.style.background = `url(${data.destinations[3].images.webp})no-repeat center center /cover`
+        setTimeout(() => {
+            planetImg.classList.add('rotate');
+        }, 500);
 
         planetName.className = 'planet-name hide';
         setTimeout(() => {
@@ -308,16 +320,13 @@ planetNav.addEventListener('click', async (e) => {
             planetTravelTime.innerHTML = `${data.destinations[3].travel}`
         }, 500);
 
-
-        planetImg.classList.remove('rotate');
-        setTimeout(() => {
-            planetImg.classList.add('rotate');
-            planetImg.style.background = `url(${data.destinations[3].images.webp})no-repeat center center /cover`
-        }, 500);
-
     }
 
-});
+
+    loading ? header.appendChild(spinner) : header.removeChild(spinner)
+}
+
+planetNav.addEventListener('click', fetchData);
 
 
 window.addEventListener('load', () => {
